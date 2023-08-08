@@ -1,0 +1,577 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 71px;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #f3f3f3;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+header {
+  display: flex;
+  background: #FFF;
+  align-items: center;
+  padding: 10px 30px;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+  grid-gap: 40px;
+}
+
+header ul li {
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.28s ease;
+}
+
+header a {
+  text-decoration: none;
+  color: #000;
+  padding: 10px 20px;
+}
+
+header ul li a:hover {
+  color: #26da70
+}
+
+.btn-default,
+#create-project {
+  cursor: pointer;
+  background: #26da70;
+  padding: 10px 20px;
+
+  border-radius: 50px;
+
+  text-decoration: none;
+  border: 2px solid transparent;
+  color: #FFF;
+  transition: all 0.28s ease;
+  min-width: 150px;
+  width: max-content;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.28s ease;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+
+}
+
+.btn-default:hover,
+#create-project:hover {
+  border: 2px solid #26da70;
+  color: #26da70;
+  background: transparent;
+}
+
+h1 {
+  margin: 0;
+  color: #26da70;
+  cursor: pointer;
+}
+
+h2 {
+  color: #757575;
+  margin: 0px 0 30px;
+  text-align: center;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+h2:before,
+h2:after {
+  content: "";
+  height: 1px;
+  width: 100px;
+  position: relative;
+  background: #ccc;
+  z-index: 0;
+  margin: 20px;
+
+}
+
+.form-group {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-group input[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.project-list {
+
+  padding: 30px;
+
+  margin-bottom: 20px;
+}
+
+.project-cards {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  grid-gap: 24px;
+  max-width: 1440px;
+  flex-wrap: wrap;
+  margin: auto;
+
+}
+
+.project-card {
+  margin-bottom: 10px;
+  border: 1px solid #e4e4e4;
+  background-color: #f9f9f9;
+  max-width: 342px;
+
+}
+
+.project-details {
+  display: flex;
+  padding: 15px;
+  flex-direction: column;
+  grid-gap: 20px;
+}
+
+.view-details-btn {
+  border: 2px solid #26da70;
+  color: #26da70;
+  background: transparent;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.28s ease;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+}
+
+.view-details-btn:hover {
+  background: #26da70;
+  color: #FFF;
+
+}
+
+.project-card .project-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.project-current-amount {
+  font-weight: 700;
+}
+
+
+.project-card .project-current-amount {
+  color: #333;
+}
+
+.project-card .project-current-amount span,
+.project-card .project-creator span {
+  font-style: italic;
+  font-weight: 400 !important;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.hero img {
+  height: 550px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.inner-hero {
+  position: relative;
+}
+
+.inner-hero .content {
+  position: absolute;
+  padding: 30px;
+  width: 40%;
+  height: 490px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right, #fff 5%, transparent 82%);
+  justify-content: center;
+
+}
+
+
+.inner-hero .content .content-heading {
+  font-size: 30px;
+  color: #000;
+  font-weight: 700;
+}
+
+.inner-hero .content .content-copy {
+  font-size: 18px;
+  color: #000;
+  font-weight: 300;
+  line-height: 30px;
+  margin: 30px 0
+}
+
+.project-card img {
+  height: 250px;
+  width: 342px;
+  object-fit: cover;
+  position: relative;
+}
+
+.project-card span img {
+  height: 24px;
+  width: auto;
+  object-fit: cover;
+  position: relative;
+}
+
+.project-card .duration span {
+  display: flex;
+  align-items: center;
+}
+
+.duration {
+  background: #f9f9f9;
+  border-top: 1px solid #dedede;
+  padding: 15px;
+  color: #7b7b7b;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 7px;
+}
+
+#p-details {
+  background: #FFF;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0px 4px 4px rgb(220 220 220 / 20%);
+
+}
+
+#withdrawFundsForm input,
+.search-bar input,
+#createProjectForm input,
+#p-details .project-details input {
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  font-size: 16px;
+  color: #333;
+  width: 50%;
+  border: 1px solid #ccc
+}
+
+#p-details .project-details {
+  padding: 0;
+}
+
+#p-details::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-bottom: 20px solid #fff;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  top: -19px;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
+.project-content {
+  display: flex;
+  grid-gap: 30px;
+
+}
+
+.project-content img {
+  height: auto;
+  width: 50%;
+  object-fit: contain;
+}
+
+#projectTitle {
+  font-size: 30px;
+  font-weight: 700;
+  color: #333;
+
+}
+
+#projectDescription {
+  font-size: 18px;
+  color: #333;
+  font-weight: 400;
+  line-height: 25px;
+
+}
+
+.project-stats {
+  display: flex;
+  flex-direction: row;
+  grid-gap: 30px;
+}
+
+.project-stats .project-items {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 20px;
+}
+
+.project-items div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  grid-gap: 20px;
+  font-size: 14px;
+}
+
+.project-items div span {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  grid-gap: 20px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.project-items div>div {
+  flex-direction: column;
+  grid-gap: 10px;
+  align-items: flex-start;
+
+}
+
+.project-items img {
+  height: 40px;
+  width: auto;
+}
+
+.create-project {
+  position: absolute;
+  z-index: 3;
+  background: #FFF;
+  width: 40%;
+  margin: auto;
+  left: 0;
+  top: 100px;
+  right: 0;
+  border-radius: 10px;
+
+}
+
+.create-project div {
+
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: #333;
+  opacity: 0.5;
+}
+
+#projectDetailsList {
+  display: flex;
+  align-items: center;
+}
+
+#tab-1,
+#tab-2,
+#tab-3 {
+  display: none;
+}
+
+
+.tab .create-project .close {
+  position: absolute;
+  right: 53px;
+  color: #ccc;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.tab #withdrawFundsForm input,
+.tab #createProjectForm input {
+  width: 100%;
+}
+
+.tab .create-project {
+  overflow: hidden;
+  transition: all 0.18s ease-in;
+  display: none;
+  padding: 30px;
+}
+
+.tab input:checked~.create-project {
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  background: #333;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.5;
+  visibility: hidden;
+}
+
+.tab input:checked~.overlay {
+  visibility: visible;
+}
+
+@media (max-width: 992px) {
+  html {
+
+    scroll-padding-top: 267px;
+  }
+
+  .inner-hero .content {
+    width: 100%;
+  }
+
+  .hero img {}
+
+  .project-content {
+    flex-wrap: wrap;
+  }
+
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  header ul {
+    padding: 0;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 30px;
+  justify-content: center;
+  background: #FFF;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  grid-gap: 20px;
+}
+
+.tabs {}
+
+.tabs label {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  position: relative;
+  grid-gap: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.tabs .content {
+
+  overflow: hidden;
+  transition: max-height 0.3s;
+  max-height: 0;
+}
+
+.tabs .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tabs .content ul li {
+  border-bottom: 1px solid #e7e7e7;
+  padding: 15px;
+}
+
+.tabs input {
+  display: none;
+}
+
+.tabs .content p {
+  padding: 10px;
+}
+
+.tabs input:checked~.content {
+  max-height: 100vh;
+}
+
+.tabs label::after {
+  display: flex;
+  content: "\25b6";
+  color: #26da70;
+  align-items: inherit;
+  justify-content: center;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+
+.tabs input:checked~label::after {
+  transform: rotate(90deg);
+}
+.project-creator {
+  overflow: hidden;
+}
+.project-details {
+  overflow: hidden;
+}

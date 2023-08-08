@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Web3 Crowdfunding DApp</title>
+	<style>
+	</style>
+	<script src="https://cdn.ethers.io/scripts/ethers-v4.min.js" charset="utf-8" type="text/javascript">
+	</script>
+	<link rel="stylesheet" href="index.css">
+	<script defer src="index.js"></script>
+</head>
+
+<body>
+	<header>
+		<h1>Web3 Crowdfunding DApp</h1>
+		<ul>
+			<li>
+				<a href="#projects" onclick="_projects()">Projects</a>
+			</li>
+			<li>
+				<div class="tab">
+					<label for="tab-2">
+						<a>Withdraw</a>
+					</label>
+					<input for="tab-2" id="tab-2" type="checkbox">
+					<div class="create-project">
+						<label for="tab-2">
+
+							<span class="close">X</span>
+						</label>
+
+						<h2>Withdraw Funds</h2>
+						<form id="withdrawFundsForm" class="form-group">
+							<label for="withdrawProjectId">Project ID:</label>
+							<input type="number" id="withdrawProjectId" required><br>
+
+							<label for="tab-2">
+
+								<button type="submit" class="btn-default" value="Create Project"
+									onclick="_withdrawFund()">Withdraw</button>
+							</label>
+						</form>
+					</div>
+					<div class="overlay"></div>
+				</div>
+			</li>
+			<li>
+				<div class="tab">
+					<label for="tab-1">
+						<a id="create-project">Create Project +</a>
+					</label>
+					<input for="tab-1" id="tab-1" type="checkbox">
+					<div class="create-project">
+						<label for="tab-1">
+							<span class="close">X</span>
+						</label>
+						<h2>Create Project</h2>
+						<form id="createProjectForm" class="form-group">
+							<label for="title">Project Title:</label>
+							<input type="text" id="title" required><br>
+							<label for="description">Project Description:</label>
+							<input type="text" id="description" required><br>
+							<label for="goalAmount">Goal Amount:</label>
+							<input type="number" id="goalAmount" required><br>
+							<label for="duration">Duration (in days):</label>
+							<input type="number" id="duration" required><br>
+							<label for="tab-1">
+								<button type="submit" class="btn-default" value="Create Project" onclick="_createProject()">Create
+									Project</button>
+							</label>
+						</form>
+					</div>
+					<div class="overlay"></div>
+				</div>
+			</li>
+		</ul>
+
+	</header>
+
+	<div class="hero">
+		<div class="inner-hero">
+			<div class="content">
+				<div class="content-heading">Empower Change, One Contribution at a Time</div>
+				<p class="content-copy">Welcome to our revolutionary crowdfunding platform, where every contribution makes a
+					lasting impact. Join us in supporting innovative projects that create positive change in communities
+					worldwide. Together, we can transform ideas into reality and inspire a brighter future. Get ready to be part
+					of something extraordinary.</p>
+				<a href="#projects" class="btn-default" onclick="_projects()">View Projects</a>
+			</div>
+		</div>
+		<img
+			src="https://easydonationpickup.com/wp-content/uploads/2020/12/people-hands-bringing-money-together-to-donate-to-charity-1024x435.jpg"
+			alt="Girl in a jacket" width="100%">
+	</div>
+	<div class="search">
+		<h2>Search Projects</h2>
+		<div class="search-bar">
+			<input type="text" id="searchProject" placeholder="Search Project">
+			<a href="#p-details"><button class="btn-default" id="searchButton" onclick="_viewProject()">Search</button></a>
+		</div>
+	</div>
+	<div class="project-list" id="projects">
+		<h2>Projects</h2>
+		<div class="project-cards">
+			<div class="project-card">
+				<img
+					src="https://images.pexels.com/photos/38325/vacuum-cleaner-carpet-cleaner-housework-housekeeping-38325.jpeg?auto=compress&cs=tinysrgb&w=1600">
+				<div class="project-details">
+					<div class="project-title">[ADD PROJECT]</div>
+					<div class="project-creator"><span>Created by:</span> </div>
+					<div class="project-current-amount"><span>Current amount:</span> 0 ETH</div>
+					<button class="view-details-btn" onclick="location.href='/project-details?id=1'">Learn more</button>
+				</div>
+				<div class="duration"><span><img width="50" height="50" src="https://img.icons8.com/ios/50/time--v1.png"
+							alt="time--v1" /></span>24 Days Remaining</div>
+			</div>
+			<div class="project-card">
+				<img
+					src="https://media.timeout.com/images/101725843/750/422/image.jpg">
+				<div class="project-details">
+					<div class="project-title">[ADD PROJECT]</div>
+					<div class="project-creator"><span>Created by: </span> </div>
+					<div class="project-current-amount"><span>Current amount:</span> 0 ETH</div>
+					<button class="view-details-btn" onclick="location.href='/project-details?id=2'">Learn more</button>
+				</div>
+				<div class="duration"><span><img width="50" height="50" src="https://img.icons8.com/ios/50/time--v1.png"
+							alt="time--v1" /></span>24 Days Remaining</div>
+			</div>
+			<div class="project-card">
+				<img
+					src="https://cdn.britannica.com/98/214598-050-9879F2FA/giant-sequoia-tree-Sequoia-National-Park-California.jpg">
+				<div class="project-details">
+					<div class="project-title">[ADD PROJECT]</div>
+					<div class="project-creator"><span>Created by: </span> </div>
+					<div class="project-current-amount"><span>Current amount:</span> 0 ETH</div>
+					<button class="view-details-btn" onclick="location.href='/project-details?id=3'">Learn more</button>
+				</div>
+				<div class="duration"><span><img width="50" height="50" src="https://img.icons8.com/ios/50/time--v1.png"
+							alt="time--v1" /></span>24 Days Remaining</div>
+			</div>
+			<div class="project-card">
+				<img
+					src="https://www.timeforkids.com/wp-content/uploads/2022/10/books_4.jpg?w=1024">
+				<div class="project-details">
+					<div class="project-title">[ADD PROJECT]</div>
+					<div class="project-creator"><span>Created by:</span></div>
+					<div class="project-current-amount"><span>Current amount:</span> 0 ETH</div>
+					<button class="view-details-btn" onclick="location.href='/project-details?id=1'">Learn more</button>
+				</div>
+				<div class="duration"><span><img width="50" height="50" src="https://img.icons8.com/ios/50/time--v1.png"
+							alt="time--v1" /></span></div>
+			</div>
+			<div class="project-card">
+				<img
+					src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+				<div class="project-details">
+					<div class="project-title">[ADD PROJECT]</div>
+					<div class="project-creator"><span>Created by: </span> </div>
+					<div class="project-current-amount"><span>Current amount:</span> 0 ETH</div>
+					<button class="view-details-btn" onclick="location.href='/project-details?id=2'">Learn more</button>
+				</div>
+				<div class="duration"><span><img width="50" height="50" src="https://img.icons8.com/ios/50/time--v1.png"
+							alt="time--v1" /></span>24 Days Remaining</div>
+			</div>
+			<div class="project-card">
+				<img
+					src="https://www.ubuy.com.ph/productimg/?image=aHR0cHM6Ly9pbWFnZXMtY2RuLnVidXkuY28uaW4vNjM2MzY4Y2YwZTJjMmM2MWMwN2IwOWQ3LWp1a3N0Zy11bWJyZWxsYS1hdXRvbWF0aWMtd2luZHByb29mLmpwZw.jpg">
+				<div class="project-details">
+					<div class="project-title">[ADD PROJECT]</div>
+					<div class="project-creator"><span>Created by: </span></div>
+					<div class="project-current-amount"><span>Current amount:</span> 0 ETH</div>
+					<button class="view-details-btn" onclick="location.href='/project-details?id=3'">Learn more</button>
+				</div>
+				<div class="duration"><span><img width="50" height="50" src="https://img.icons8.com/ios/50/time--v1.png"
+							alt="time--v1" /></span>24 Days Remaining</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="p-details">
+		<h2>Project Details</h2>
+		<div class="project-content" id="projectDetails">
+			<img
+				src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+			<div id="projectDetailsList">
+				<div class="project-details">
+
+					<span id="projectTitle">Project Title</span>
+					<span id="projectId">Project Id:</span>
+					<span id="projectCreator">Creator:</span>
+					<span id="projectDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+						incididunt ut labore et dolore
+						magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+						commodo
+						consequat.</span>
+					<div class="project-stats">
+						<div class="project-items">
+							<div>
+								<img width="50" height="50" src="https://img.icons8.com/ios/50/000000/time--v1.png" alt="time--v1" />
+								<div>
+									<label for="projectDuration">Duration:</label>
+									<span id="projectDuration"></span>
+
+								</div>
+							</div>
+							<div>
+								<img width="50" height="50" src="https://img.icons8.com/ios/50/000000/goal--v1.png" alt="goal--v1" />
+								<div>
+									<label for="projectGoal">Goal Amount:</label>
+									<span id="projectGoal"></span>
+								</div>
+							</div>
+						</div>
+						<div class="project-items">
+							<div>
+								<img width="64" height="64" src="https://img.icons8.com/wired/64/000000/in-progress.png"
+									alt="in-progress" />
+								<div>
+									<label for="projectCurrent">Current Amount:</label>
+									<span id="projectCurrent"></span>
+								</div>
+							</div>
+							<div>
+								<img width="50" height="50" src="https://img.icons8.com/ios/50/000000/spinner-frame-5.png"
+									alt="spinner-frame-5" />
+								<div>
+									<label for="projectCompleted">Status:</label>
+									<span id="projectCompleted"></span>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div id="contributeForm" class="form-group">
+						<input type="number" id="projectId" required hidden>
+
+						<input type="number" id="contributionAmount" placeholder="Please Input Contribution" required><br>
+
+						<button type="submit" class="btn-default" value="Contribute" onclick="_contribute()">Contribute</button>
+					</div>
+
+					<div class="tabs">
+						<input id="tabs-1" type="checkbox" onclick="_showContributors()">
+						<label for="tabs-1">Contributors List</label>
+						<div class="content">
+							<ul>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
